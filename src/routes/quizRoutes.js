@@ -15,6 +15,9 @@ import {
 import { loginRequired, login, register } from '../controllers/userController';
 
 const routes = (app) => {
+  app.route('/').get((req, res) => {
+    res.json({ message: 'APIs can be found here!!' });
+  });
   app.route('/quizzes').get((req, res, next) => {
     console.log(`Request from ${req.originalUrl}`);
     console.log(`Request type: ${req.method}`);
